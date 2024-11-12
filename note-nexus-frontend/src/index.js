@@ -2,14 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/App';
 import './index.css';
-import { BrowserRouter } from 'react-router-dom'; // Import BrowserRouter here
-import { Toaster } from 'react-hot-toast';
+import { HashRouter } from 'react-router-dom';
+
+const RootComponent = () => {
+  return (
+    <React.StrictMode>
+      <App /> 
+    </React.StrictMode>
+  );
+};
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <BrowserRouter> 
-      <Toaster position="top-right" />
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>
+  <HashRouter>
+    <RootComponent /> 
+  </HashRouter>
 );
